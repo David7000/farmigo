@@ -1,0 +1,97 @@
+html {
+    color: #333;
+    font-family: "Open Sans";
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+html {
+    font-family: sans-serif;
+}
+
+html body {
+    color: #333;
+    font-family: "Open Sans";
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+
+
+.module-products {
+    padding: 1rem;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+[class^="list-"], [class*=" list-"] {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hide {
+    display: none !important;
+}
+.list-products, .education_banner_container {
+    margin: 0 auto;
+    width: 912px;
+}
+
+.list-products, .education_banner_container {
+    margin: 0 auto;
+    width: 912px;
+}
+.list-products {
+    margin: 0 auto;
+}
+.list-products {
+    font-size: 0;
+}
+[class^="list-"], [class*=" list-"] {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+[class^="list-"], [class*=" list-"] {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.list-grid {
+    margin-left: 0;
+}
+ul, ol, dd {
+    margin-left: 3rem;
+}
+
+
+.list-products > li {
+    margin-bottom: -1px;
+    margin-right: -1px;
+    text-align: left;
+    width: 228px;
+}
+.list-products > li {
+    width: 100%;
+}
+.list-grid > li {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+.pagination {
+    height: 2.5rem;
+    margin: 3.5rem auto;
+    min-width: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+

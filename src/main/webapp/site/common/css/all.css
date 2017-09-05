@@ -1,0 +1,86 @@
+/*** Common to all Farmigo pages ***/
+
+/*** resets unwanted browser defaults ***/
+body, li, ol, ul, dl, dd, dt, form, fieldset, figure, blockquote {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+em {
+	font-style: normal;
+}
+
+img, form, fieldset {
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+a, A:VISITED {
+	text-decoration: none;
+}
+
+*:FOCUS {
+	outline: none;	
+}
+
+/*** more specific css rules ***/
+
+/*** a nice frame for any image element that needs a frame ***/
+.has-frame {
+	padding: 2px;
+	background-color: white;
+	box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.has-frame.dark {
+	box-shadow: 1px 1px 4px #678;
+}
+
+/* 
+ * AKA clearfix, see http://css-tricks.com/snippets/css/clear-fix/ 
+ * Introduced at feb 13 2012, should replace the use of "overflow: hidden" when it's used for clearing purpose, and eliminate the need for a clearence additional element.
+ * Instructions: Add the class "group" to any element you want to be cleared (I also added here rules for "main-content" since it's widely used in the app.) 
+ */
+.group:before,.group:after,.main-content:before,.main-content:after {
+    content:"";
+    display:table;
+}
+.group:after,.main-content:after {
+    clear:both;
+}
+
+/* Paper middle box shadow style (we have an improved one in common.less file) */
+.middle-shadow {
+	position: relative;
+}
+.middle-shadow:before, .middle-shadow:after {
+	position: absolute;
+	width: 45%;
+	height: 10px;
+	content: ' ';
+	right: 5%;
+	bottom: 6px;
+	background: transparent;
+	-webkit-transform: skew(-5deg) rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: skew(-5deg) rotate(-1deg);
+	-o-transform: skew(-5deg) rotate(-1deg);
+	transform: skew(-5deg) rotate(-1deg);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+	z-index: -1;
+}
+.middle-shadow:after {
+	left: 5%;
+	-webkit-transform: skew(5deg) rotate(1deg);
+	-moz-transform: rotate(1deg);
+	-ms-transform: skew(5deg) rotate(1deg);
+	-o-transform: skew(5deg) rotate(1deg);
+	transform: skew(5deg) rotate(1deg);
+}
