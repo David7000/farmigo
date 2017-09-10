@@ -15,13 +15,13 @@
 
     
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <link type="image/x-icon" rel="shortcut icon" href="site/common/images/favicon.png">
-        <link href="site/common/css/MyFontsWebfontsKit.css" type="text/css" rel="stylesheet"/>
+        <link type="image/x-icon" rel="shortcut icon" href="/site/common/images/favicon.png">
+        <link href="/site/common/css/MyFontsWebfontsKit.css" type="text/css" rel="stylesheet"/>
       
-        <script src="site/common/js/lib/log4javascript_production62b4.js?v=1.4.3"></script>
-        <script src="site/common/js/lib/fastclick.js"></script>
+        <script src="/site/common/js/lib/log4javascript_production62b4.js?v=1.4.3"></script>
+        <script src="/site/common/js/lib/fastclick.js"></script>
        
-        <link type='text/css' rel="stylesheet" href='site/farmigo.com/css/maind3d7.css?2016-06-24-2230'>
+        <link type='text/css' rel="stylesheet" href='/site/farmigo.com/css/maind3d7.css?2016-06-24-2230'>
        
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
         <meta name="description" content="Shop your online farmer?s market ? fresh food, direct from the source. Buy local produce, dairy, meats, and more with delivery straight to your neighborhood."/>
@@ -29,7 +29,7 @@
         <meta property="og:title" content="20% off, amazingly fresh food!"/>
         <meta property="og:description" content="I love Farmigo! Incredible food, direct from local farms & producers. Use my code LOCAL20 for 20% off your first order."/>
         <meta property="og:image" content="images/fb-share.jpg"/>
-        <script src="site/common/js/namespace/namespace.js"></script>
+        <script src="/site/common/js/namespace/namespace.js"></script>
 
         
         
@@ -121,11 +121,11 @@
                         <ul id="user-menu" class="dropdown-menu ">
 
                             <li id="login" class="menu menu-box" >
-                                <a href='JSP_boundary/login.jsp'>Log In</a>
+                                <a href='/JSP_boundary/login.jsp'>Log In</a>
                             </li>
                             
                             <li id="Inscription" class="menu menu-box" >
-                                <a href='JSP_boundary/enregistrer.jsp'>Inscription</a>
+                                <a href='/JSP_boundary/enregistrer.jsp'>Inscription</a>
                             </li>                            
                             
                             
