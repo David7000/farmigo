@@ -626,7 +626,7 @@
                                                            
                                                                      
                                                                 out.write("<tr>"
-                                                                        + "<td><img src =http://" + com.test.util.ServerHostPort.getHostDomainName() + ":" + com.test.util.ServerHostPort.PORT + "/" + (appDao.getProduit(ligneCommande.getId_produit())).getPhoto() + " class=\"share-picture img-responsive \" alt = \" ALT_PHOTO\" > </td>"
+                                                                        + "<td><img src =\""+"/" + (appDao.getProduit(ligneCommande.getId_produit())).getPhoto() + " class=\"share-picture img-responsive \" alt = \" ALT_PHOTO\" > </td>"
                                                                         + "<td>" + (appDao.getProduit(ligneCommande.getId_produit())).getNom() + "</td>"
                                                                         + "<td>" + (appDao.getProduit(ligneCommande.getId_produit())).getDescription() + " </td>"
                                                                         + "<td>" + (appDao.getProduit(ligneCommande.getId_produit())).getTVAproduit() + "%</td>"
