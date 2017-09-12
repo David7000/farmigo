@@ -938,7 +938,7 @@
 
     <!-- require.js -->
 
-    <script src="Market_Farmigo Food Community/build.js"></script>
+    <script src="/JS/build.js"></script>
 
 
     <!-- Optimizely A/B testing tool -->
