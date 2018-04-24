@@ -99,50 +99,7 @@
     </script>
     <!-- Evalute screen capture tools -->
 
-
-
-
-   
-    <!--jsp:include page="/site/common/jsp/SessionCam.jsp"/> -->
-
-
-
-
-    <script>
-        Farmigo.com.data.startApplyUrl = 'index.html';
-        Farmigo.com.data.currentPage = 'home';
-    </script>
-
-
-    <script>
-        // Create regions object to be used when client needs Region dependent information (map page, organizer page)
-        Farmigo.common.data.regions = {};
-
-        Farmigo.common.data.regions['NY'] = {
-            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAwPP3tQsM'
-        };
-
-        Farmigo.common.data.regions['SF'] = {
-            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAwOnmlAoM'
-        };
-
-        Farmigo.common.data.regions['SEA'] = {
-            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAkPLDgAkM'
-        };
-
-
-    </script>
-    <script>
-        window.runAfter(function () {
-            // ga for main pages
-            var ga = Farmigo.common.analytics.Common;
-            ga.handleHomeAnalytics(
-                    ga.Flow.HOME
-
-                    );
-        });
-    </script>
-
+ 
 
 </head>
 
