@@ -5,10 +5,10 @@
 
 
 
-    <head>
+    <head lang="fr">
         <title>Home </title>   
-        <meta charset=UTF-8">
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        <meta charset="UTF-8">
+       
         <meta name="description" content="Shop your online farmer?s market ? fresh food, direct from the source. Buy local produce, dairy, meats, and more with delivery straight to your neighborhood."/>
         <meta property="og:title" content="20% off, amazingly fresh food!"/>
         <meta property="og:description" content="I love Farmigo! Incredible food, direct from local farms & producers. Use my code LOCAL20 for 20% off your first order."/>
@@ -198,7 +198,7 @@
 
         <section id="confirmation-popup" style="display:none;">
             <span id="type-icon"></span>
-            <h3 class="heading"></h3>
+          
             <p class="message"></p>
             <button class="ok button">Continue</button>
             <a class="cancel">Return</a>
@@ -264,10 +264,7 @@
                         </video>
                     </div>
                     <div  id="fade" onClick="lightbox_close();"></div>
-                    <div>
-
-                        <button class="hero-title" href="#" onclick="lightbox_open();">Watch video</button>
-                    </div>
+                
 
                     <script  src="/JS/index.js"></script>
 
