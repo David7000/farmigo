@@ -1,38 +1,72 @@
 <!DOCTYPE html>
-
 <html class="farmigo-com">
-    <head>
-        <script>
-            window.functionsToRun = [];
-            window.runAfter = function (callback) {
-                if (window.requireFinished) {
-                    callback();
-                } else {
-                    window.functionsToRun.push(callback);
-                }
-            }
-        </script>
 
-    
+    <script>
+        window.functionsToRun = [];
+        window.runAfter = function (callback) {
+            if (window.requireFinished) {
+                callback();
+            } else {
+                window.functionsToRun.push(callback);
+            }
+        }
+    </script>
+
+
+
+    <head>
+        <title>Home </title>   
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <link type="image/x-icon" rel="shortcut icon" href="/site/common/images/favicon.png">
-        <link href="/site/common/css/MyFontsWebfontsKit.css" type="text/css" rel="stylesheet"/>
-      
-        <script src="/site/common/js/lib/log4javascript_production62b4.js?v=1.4.3"></script>
-        <script src="/site/common/js/lib/fastclick.js"></script>
-       
-        <link type='text/css' rel="stylesheet" href='/site/farmigo.com/css/maind3d7.css?2016-06-24-2230'>
-       
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
         <meta name="description" content="Shop your online farmer?s market ? fresh food, direct from the source. Buy local produce, dairy, meats, and more with delivery straight to your neighborhood."/>
-        <!-- Facebook open graph meta tags -->
         <meta property="og:title" content="20% off, amazingly fresh food!"/>
         <meta property="og:description" content="I love Farmigo! Incredible food, direct from local farms & producers. Use my code LOCAL20 for 20% off your first order."/>
-        <meta property="og:image" content="images/fb-share.jpg"/>
-        <script src="/site/common/js/namespace/namespace.js"></script>
+        <meta property="og:image" content="https://www.farmigo.com/site/common/images/fb-share.jpg"/>
+        <link type="image/x-icon" rel="shortcut icon" href="site/common/images/favicon.png">
+        <link href="site/common/css/MyFontsWebfontsKit.css" type="text/css" rel="stylesheet"/>
+        <link rel="icon" href="site/common/images/farmigo-app-icon.png">
+        <link rel="apple-touch-icon" href="site/common/images/farmigo-app-icon.png"/>
+        <link type='text/css' rel="stylesheet" href='site/farmigo.com/css/maind3d7.css?2016-06-24-2230'>
+        <link rel="stylesheet" href="/CSS/stylee.css">
 
-        
-        
+        <script src="site/common/js/lib/log4javascript_production62b4.js?v=1.4.3"></script>
+        <script src="site/common/js/lib/fastclick.js"></script>
+        <script src="site/common/js/namespace/namespace.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfANpgkDJZ9xA6_PeUIy0PhJbC75OMruc"></script>
+        <script src="site/farmigo.com/buildd3d7.js?2016-06-24-2230"></script>
+
+        <script>
+            // General values that are detected by the server and passed to JS code
+            Farmigo.common.data.isProduction = true;
+            Farmigo.common.data.isFarmigoUser = false;
+            Farmigo.common.data.isIpad = 0;
+            Farmigo.common.data.isTouch = 'ontouchstart' in document.documentElement;
+            Farmigo.common.data.isMobile = 0;
+            Farmigo.common.data.isMobileDevice = 0;
+            Farmigo.common.data.debugMode = false;
+            Farmigo.common.data.page = 'Home';
+            Farmigo.common.data.pageWidth = 993;
+            Farmigo.common.data.farmKey = null;
+            Farmigo.common.data.supportEmail = 'help@farmigo.com';
+            Farmigo.common.data.loginUrl = 'login.html';
+            Farmigo.common.useragent = {
+                ie9: false,
+                ie8: false,
+                ie7: false,
+                ie: false
+            }
+
+            // set data for identifying (kiss metrics, qualaroo)
+
+            var communities = [];
+
+            if (communities.length > 0) {
+                Farmigo.common.data.memberCommunities = communities;
+            }
+
+        </script>
+
+
 
 
         <script>
@@ -49,353 +83,492 @@
         </script>
 
 
-        <!-- farmigo enums for js -->
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfANpgkDJZ9xA6_PeUIy0PhJbC75OMruc"></script>       
-        <script src="site/farmigo.com/buildd3d7.js?2016-06-24-2230"></script>
-     
-        
+
 
         <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '../www.google-analytics.com/analytics.js', '_ga');
 
+            _ga('create', 'UA-8893503-1', 'auto');
+            //Update GA user-id if exists
+            if (Farmigo.common.model.MemberData && Farmigo.common.model.MemberData.memberKey)
+                _ga('set', '&uid', Farmigo.common.model.MemberData.memberKey);
+            _ga('set', 'campMedium', 'utm_medium');
+            _ga('set', 'campName', 'utm_campaign');
+            _ga('set', 'campSource', 'utm_source');
+        </script>
         <!-- End Google Analytics -->
 
-        <!-- Optimizely A/B testing tool -->
-       
-         <!--   start Mixpanel -->
-        
+
+
+
+        <!-- start Mixpanel -->
+        <script type="text/javascript">(function (f, b) {
+                if (!b.__SV) {
+                    var a, e, i, g;
+                    window.mixpanel = b;
+                    b._i = [];
+                    b.init = function (a, e, d) {
+                        function f(b, h) {
+                            var a = h.split(".");
+                            2 == a.length && (b = b[a[0]], h = a[1]);
+                            b[h] = function () {
+                                b.push([h].concat(Array.prototype.slice.call(arguments, 0)))}}var c = b;"undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";c.people = c.people || [];c.toString = function (b) {
+                            var a = "mixpanel";
+                            "mixpanel" !== d && (a += "." + d);
+                            b || (a += " (stub)");
+                            return a
+                        };
+                        c.people.toString = function () {
+                            return c.toString(1) + ".people (stub)"
+                        };
+                        i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+                        for (g = 0; g < i.length; g++)
+                            f(c, i[g]);
+                        b._i.push([a, e, d])
+                    };
+                    b.__SV = 1.2;
+                    a = f.createElement("script");
+                    a.type = "text/javascript";
+                    a.async = !0;
+                    a.src = "../cdn.mxpnl.com/libs/mixpanel-2.2.min.js";
+                    e = f.getElementsByTagName("script")[0];
+                    e.parentNode.insertBefore(a, e)
+                }
+            })(document, window.mixpanel || []);
+        </script>
         <!-- end Mixpanel -->
 
-   <!-- Evalute screen capture tools -->
 
 
-
-
-        <!-- Begin Inspectlet Embed Code -->
- <!-- End Inspectlet Embed Code -->
-
-        <!--jsp:include page="/site/common/jsp/SessionCam.jsp"/> -->
-
-        <script>
-            Farmigo.com.data.startApplyUrl = 'index.html';
-            Farmigo.com.data.currentPage = 'home';
-        </script>
-
-
-        <title>Home | Farmigo</title>
-
-        <link rel="icon" href="site/common/images/farmigo-app-icon.png">
-        <link rel="apple-touch-icon" href="site/common/images/farmigo-app-icon.png"/>
-
-        <!-- Production -->
         <!-- Google Tag Manager -->
-        
-
-    <body id="page-home" class="not-mobile desktop ">
-
-        <div id="page-content">
-
-            <div id="header-box" >
-                <header id="header">
-                    <div class="header-content centered group">
-                        <a id="logo" href="index.jsp"></a>
-
-                        <ul class="start-community dropdown-menu">
-                            <li hasChildren>
-                                <a>Host a Pickup Site</a><span class="down-arrow"></span>
-                                <ul>
-                                    <li>
-                                        <a id="neighbourhood" href="start.jsp" class="start">In your neighborhood</a>
-                                    </li>
-                                    <li>
-                                        <a id="school" href="schools.jsp" class="schools">In your school</a>
-                                    </li>
-                                    <li>
-                                        <a id="workplace" href="benefits.jsp" class="workplace">In your workplace</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MR23K8"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MR23K8');</script>
+    <!-- End Google Tag Manager -->
 
 
-                        <ul id="user-menu" class="dropdown-menu ">
-
-                            <li id="login" class="menu menu-box" >
-                                <a href='/JSP_boundary/login.jsp'>Log In</a>
-                            </li>
-                            
-                            <li id="Inscription" class="menu menu-box" >
-                                <a href='/JSP_boundary/enregistrer.jsp'>Inscription</a>
-                            </li>                            
-                            
-                            
-                            <li id="user-title" class="menu" hasChildren style='display: none;'>
-                                <a></a><span class="down-arrow"></span>
-
-                                <ul style='display: none;'>
-
-                                    <li><a id="logout"><span class="icon"></span>Log Out
-                                        </a></li>
-                                </ul>
-                            </li>
-                        </ul>
 
 
-                        <nav>
-                            <ul id="nav">
+
+    <script>
+        if (Farmigo.common.data.isProduction)
+            mixpanel.init("1de18df0e735994ce21b919f3fa006eb");
+        else
+            mixpanel.init("e560df27bfe6f87fde28c4307b30b940");
+
+        window.runAfter(function () {
+
+            var MemberData = (((Farmigo || {}).common || {}).model || {}).MemberData;
+            if (MemberData) {
+                mixpanel.identify(MemberData.email);
+
+                if (MemberData.firstName) {
+                    mixpanel.people.set({
+                        $email: MemberData.email,
+                        $first_name: MemberData.firstName,
+                        $last_name: MemberData.lastName
+                    });
+                }
+            }
+        });
+    </script>
+    <!-- Evalute screen capture tools -->
 
 
-                                <li>
-                                    <a id="about" href="about.jsp">About</a>
-                                </li>
 
-                                <li class="help-col">
-                                    <a id="help" href="about.jsp" target="_blank">Help</a>
-                                </li>
 
+    <!-- Begin Inspectlet Embed Code -->
+    <script type="text/javascript" id="inspectletjs">
+        window.__insp = window.__insp || [];
+        __insp.push(['wid', 1613139788]);
+        (function () {
+            function __ldinsp() {
+                var insp = document.createElement('script');
+                insp.type = 'text/javascript';
+                insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(insp, x);
+            }
+            if (window.attachEvent) {
+                window.attachEvent('onload', __ldinsp);
+            } else {
+                window.addEventListener('load', __ldinsp, false);
+            }
+        })();
+    </script>
+    <!-- End Inspectlet Embed Code -->
+
+    <!--jsp:include page="/site/common/jsp/SessionCam.jsp"/> -->
+
+
+
+
+    <script>
+        Farmigo.com.data.startApplyUrl = 'index.html';
+        Farmigo.com.data.currentPage = 'home';
+    </script>
+
+
+    <script>
+        // Create regions object to be used when client needs Region dependent information (map page, organizer page)
+        Farmigo.common.data.regions = {};
+
+        Farmigo.common.data.regions['NY'] = {
+            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAwPP3tQsM'
+        };
+
+        Farmigo.common.data.regions['SF'] = {
+            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAwOnmlAoM'
+        };
+
+        Farmigo.common.data.regions['SEA'] = {
+            farmKey: 'ahVzfmZhcm1pZ28tY29tbXVuaXRpZXNyEQsSBEZhcm0YgICAkPLDgAkM'
+        };
+
+
+    </script>
+    <script>
+        window.runAfter(function () {
+            // ga for main pages
+            var ga = Farmigo.common.analytics.Common;
+            ga.handleHomeAnalytics(
+                    ga.Flow.HOME
+
+                    );
+        });
+    </script>
+
+
+</head>
+
+
+
+
+<body id="page-home" class="not-mobile desktop ">
+
+
+
+
+    <section class="member-how-section">
+        <a class="close">Close</a>
+        <div class="centered">
+            <h1>How Farmigo Works</h1>
+            <ul>
+
+                <li>
+                    <figure>
+                        <img src='site/farmigo.com/images/home/how1d3d7.svg?2016-06-24-2230'/>
+                        <figcaption>
+                            <h3>Order Online</h3>
+                            <p class="big">Do your weekly shopping for fresh produce, dairy, fish, meats, snacks, and more! Order a la carte, with total flexibility.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src='site/farmigo.com/images/home/how2d3d7.svg?2016-06-24-2230'/>
+                        <figcaption>
+                            <h3>We Harvest</h3>
+                            <p class="big">Our products are typically harvested or made after you order, helping us reduce food waste and ensure everything is incredibly fresh and loaded with nutrition.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src='site/farmigo.com/images/home/how3d3d7.svg?2016-06-24-2230'/>
+                        <figcaption>
+                            <h3>You Pick Up</h3>
+                            <p class="big">Head to your neighborhood pick-up spot to get your groceries and enjoy!</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+            </ul>
+            <button  onclick="window.location.href = '/JSP_boundary/login.jsp'"   class="how-cta button big">Shop Now</button>
+        </div>
+    </section>
+
+
+    <div id="page-content">
+
+
+
+
+
+
+        <div id="header-box" >
+            <header id="header">
+                <div class="header-content centered group">
+
+
+                    <a id="logo" href="/index.jsp"></a>
+
+                    <ul id="user-menu" class="dropdown-menu ">
+
+                        <li id="login" class="menu menu-box" >
+                            <a href='/JSP_boundary/login.jsp'>Log In</a>
+                        </li>
+
+                        <li id="Inscription" class="menu menu-box" >
+                            <a href='/JSP_boundary/signup.jsp'>Inscription</a>
+                        </li>                            
+
+
+                        <li id="user-title" class="menu" hasChildren style='display: none;'>
+                            <a></a><span class="down-arrow"></span>
+
+                            <ul style='display: none;'>
+
+                                <li><a id="logout"><span class="icon"></span>Log Out
+                                    </a></li>
                             </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
+                        </li>
+                    </ul>
 
-            <section id="confirmation-popup" style="display:none;">
-                <span id="type-icon"></span>
-                <h3 class="heading"></h3>
-                <p class="message"></p>
-                <button class="ok button">Continue</button>
-                <a class="cancel">Return</a>
-            </section>
-
-            <div class="centered">
-                <div class="help-tab">
-                    <div class="help-links">
-                        <ul class="links dynamic">
-
-                            <li>
-                                <a href="http://help..com/hc/en-us/articles/202778649-How-do-I-sign-up-" target="_blank">How do I sign up?</a>
-                            </li>
-
-                            <li>
-                                <a href="http://help..com/hc/en-us/articles/200940285-How-does-Farmigo-select-its-producers-" target="_blank">How does Farmigo select its producers?</a>
-                            </li>
-
-                            <li>
-                                <a href="http://help..com/hc/en-us/articles/200940355-What-is-the-Community-pick-up-experience-like-" target="_blank">What is the Community pick up experience like?</a>
-                            </li>
-
-                        </ul>
-                        <ul class="links fixed">
-                            <li>
-                                <a class="browse-faq" href="http://help..com/" target="_blank"><i></i>Browse FAQ</a>
-                            </li>
-                            <li>
-                                <a class="contact" href="http://help..com/hc/en-us/requests/new" target="_blank"><i></i>Contact Support</a>
-                            </li>
-                        </ul>
-                    </div>
- 
                 </div>
-            </div>
-
-
-
-            <script>
-                window.runAfter(function () {
-                    Farmigo.com.view.HomePageView.show();
-                });
-            </script>
-            <section class="content-section">
-                <div class="content default-view">
-                    <div class="default-content">
-                        <h1 class="hero-title">Good food is worth it</h1>
-                        <h2 class="hero-title">Get fresh food, direct from the source &mdash;<br class="visible-xs"/> shop our online farmer&rsquo;s market</h2>
-
-                    </div>
-                    
-                </div>
-                <button class="how-it-works semi-ghost">How it works</button>   
-            </section>
+            </header>
         </div>
 
-        <!-- marketplace common footer    open Open  -->
 
-        <section class="member-how-section">   
-            <a class="close">Close</a>
-            <div class="centered">
-                <h1>How Farmigo Works</h1>
-                <ul>
 
-                    <li>
-                        <figure>
-                            <img src='site/farmigo.com/images/home/how1d3d7.svg?2016-06-24-2230'/>
-                            <figcaption>
-                                <h3>Order Online</h3>
-                                <p class="big">Do your weekly shopping for fresh produce, dairy, fish, meats, snacks, and more! Order a la carte, with total flexibility.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
+        <section id="confirmation-popup" style="display:none;">
+            <span id="type-icon"></span>
+            <h3 class="heading"></h3>
+            <p class="message"></p>
+            <button class="ok button">Continue</button>
+            <a class="cancel">Return</a>
+        </section>
 
-                    <li>
-                        <figure>
-                            <img src='site/farmigo.com/images/home/how2d3d7.svg?2016-06-24-2230'/>
-                            <figcaption>
-                                <h3>We Harvest</h3>
-                                <p class="big">Our products are typically harvested or made after you order, helping us reduce food waste and ensure everything is incredibly fresh and loaded with nutrition.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
+        <div class="centered">
+            <div class="help-tab">
+                <div class="help-links">
+                    <ul class="links dynamic">
 
-                    <li>
-                        <figure>
-                            <img src='site/farmigo.com/images/home/how3d3d7.svg?2016-06-24-2230'/>
-                            <figcaption>
-                                <h3>You Pick Up</h3>
-                                <p class="big">Head to your neighborhood pick-up spot to get your groceries and enjoy!</p>
-                            </figcaption>
-                        </figure>
-                    </li>
+                        <li>
+                            <a href="http://help.farmigo.com/hc/en-us/articles/202778649-How-do-I-sign-up-" target="_blank">How do I sign up?</a>
+                        </li>
 
-                </ul>
+                        <li>
+                            <a href="http://help.farmigo.com/hc/en-us/articles/200940285-How-does-Farmigo-select-its-producers-" target="_blank">How does Farmigo select its producers?</a>
+                        </li>
+
+                        <li>
+                            <a href="http://help.farmigo.com/hc/en-us/articles/200940355-What-is-the-Community-pick-up-experience-like-" target="_blank">What is the Community pick up experience like?</a>
+                        </li>
+
+                    </ul>
+                    <ul class="links fixed">
+                        <li>
+                            <a class="browse-faq" href="http://help.farmigo.com/" target="_blank"><i></i>Browse FAQ</a>
+                        </li>
+                        <li>
+                            <a class="contact" href="http://help.farmigo.com/hc/en-us/requests/new" target="_blank"><i></i>Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
-        </section>		 
+        </div>
 
 
-        <footer>
-            <div class="top">
-                <div class="centered group">
-                    <div class="col col-1">
-                        <span class="logo"></span>
-                        <p class="mission">Our mission is to create a food system that's better for everyone, from farmers to eaters.</p>
+
+
+
+
+        <script>
+            window.runAfter(function () {
+                Farmigo.com.view.HomePageView.show();
+            });
+        </script>
+        <section class="content-section">
+            <div class="content default-view">
+                <div class="default-content">
+                    <h1 class="hero-title">Good food is worth it</h1>
+                    <h2 class="hero-title">Get fresh food, direct from the source &mdash;<br class="visible-xs"/> shop our online farmer&rsquo;s market</h2>
+                    <!--            <button  href="#" onclick="lightbox_open();" class="cta button ghost">Shopp Now</button>-->
+
+
+
+
+                    <div id="light">
+                        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                        <video id="VisaChipCardVideo" width="600" controls>
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+                            <!--Browser does not support <video> tag -->
+                        </video>
                     </div>
-                    <div class="col col-2">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <h3>Company</h3>
-                                </li>
-                                <li>
-                                    <a class="about" href="about.jsp">
-                                        About
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="jobs" href="about/jobs.jsp">
-                                        We're Hiring!
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="press" href="about/press.jsp">
-                                        Press
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div  id="fade" onClick="lightbox_close();"></div>
+                    <div>
+
+                        <button class="hero-title" href="#" onclick="lightbox_open();">Watch video</button>
                     </div>
-                    <div class="col col-3">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <h3>Info</h3>
-                                </li>
-                                <li>
-                                    <a class="faq" href="http://help..com/" target="_blank">FAQ</a>
-                                </li>
-                                <li class="visible-xs">
-                                    <a class="privacy" href="privacy.jsp">
-                                        Privacy
-                                    </a>
-                                </li>
-                                <li class="visible-xs">
-                                    <a class="terms" href="terms.jsp">
-                                        Terms
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="producer-standards" href="producer-standards.jsp">
-                                        Producer Standards
-                                    </a>
-                                </li>
-                                <li class="hidden-xs">
-                                    <a class="csa-software" href="http://www.csamanagementsoftware.com/" target="_blank">
-                                        CSA Software
-                                    </a>
-                                </li>
+
+                    <script  src="/JS/index.js"></script>
+
+                </div>
+
+
+                <!--        <div class="region-content">
+                            <h2 class="hero-title">Where are you located?</h2>
+                            <ul class="region-list">
+                                
+                                    <li>
+                                        <button class="button ghost" data-id="NY">New York</button>
+                                    </li>
+                                
+                                    <li>
+                                        <button class="button ghost" data-id="NJ">New Jersey</button>
+                                    </li>
+                                
+                                    <li>
+                                        <button class="button ghost" data-id="SF">Northern California</button>
+                                    </li>
+                                
+                                    <li>
+                                        <button class="button ghost" data-id="SEA">Seattle-Tacoma</button>
+                                    </li>
+                                
                             </ul>
-                        </nav>
-                    </div>
-                    <div class="col col-4">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <h3>Community</h3>
-                                </li>
-                                <li>
-                                    <a class="blog" href="http://blog..com/" target="_blank">Blog</a>
-                                </li>
-                                <li>
-                                    <a class="map" href="map.jsp">
-                                        Shop the Market
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="start" href="start.jsp">
-                                        Start a Pickup Site
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col col-last">
-                        <div class="follow-us">
-                            <h3>Follow Us</h3>
-                            <ul class="group">
-                                <li><a class="facebook" title="Facebook" target="_blank" href="http://www.facebook.com/"></a></li>
-                                <li><a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/"></a></li>
-                                <li><a class="instagram" title="Instagram" target="_blank" href="https://instagram.com/"></a></li>
-                                <li><a class="pinterest" title="Pinterest" target="_blank" href="https://www.pinterest.com/"></a></li>
-                            </ul>
-                        </div>
+                            <div class="forms transparent">
+                                <div class="forms-content">
+                                    <a class="out-of-region-link">Request Farmigo in your area &raquo;</a>
+                                    <form class="out-of-region-form" onsubmit="return false;" style="display:none;">
+                                        <div class="zip-code form-field">
+                                            <input  id="zipCode" type="text" placeholder="Zip Code" error="please enter valid value" mandatory>
+                                        </div>
+                                        <div class="email form-field">
+                                            <input id="email" type="email" form-type="email" placeholder="Email" error="Please enter a valid email" mandatory>
+                                        </div>
+                                        <button type="submit" class="button">Submit</button>
+                                    </form>
+                                    <div class="out-of-region-final-content" style="display:none;">
+                                        <i class="check-mark"></i>
+                                        <h3>Thanks!</h3>
+                                        <p>We'll let you know when we're in your neighborhood!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+            </div>
+            <button class="how-it-works semi-ghost">How it works</button>
+        </section>
+
+
+
+    </div>
+
+    <!-- marketplace common footer -->
+
+    <footer>
+        <div class="top">
+            <div class="centered group">
+                <div class="col col-1">
+                    <span class="logo"></span>
+                    <p class="mission">Our mission is to create a food system that's better for everyone, from farmers to eaters.</p>
+                </div>
+                <div class="col col-2">
+                    <nav>
+                        <ul>
+                            <li>
+                                <h3>L'entreprise</h3>
+                            </li>
+                            <li>
+                                <a class="about" href="/JSP_boundary/about/mission.jsp" target="_blank">
+                                    Histoire
+                                </a>
+                            </li>
+                            <li>
+                                <a class="jobs" href="/JSP_boundary/about/team.jsp" target="_blank">
+                                    l'equipe
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col col-3">
+                    <nav>
+                        <ul>
+                            <li>
+                                <h3>Réseau</h3>
+                            </li>
+                            <li>
+                                <a class="faq" href="/JSP_boundary/about/press.jsp" target="_blank"> 
+                                    Comment ça marche ????
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="producer-standards" href="/JSP_boundary/about/jobs.jsp" target="_blank">
+                                    lab
+                                </a>
+                            </li>                               
+
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col col-4">
+                    <nav>
+                        <ul>
+                            <li>
+                                <h3>Contact</h3>
+                            </li>
+                            <li>
+                                <a class="blog" href="mailto:support@mail.fr" target="_blank">support@mail.fr</a>
+                            </li>
+                            <li>
+                                <a class="map"  >
+                                    TEL:78576578667
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col col-last">
+                    <div class="follow-us">
+                        <h3>Suivez-nous</h3>
+                        <ul class="group">
+                            <li><a class="facebook" title="Facebook" target="_blank" href="http://www.facebook.com/"></a></li>
+                            <li><a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/"></a></li>
+                            <li><a class="instagram" title="Instagram" target="_blank" href="https://instagram.com/"></a></li>
+                            <li><a class="pinterest" title="Pinterest" target="_blank" href="https://www.pinterest.com/"></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="bottom">
-                <div class="centered group">
-                    <div class="col col-1">
-                        <span class="rights">&copy; 2017 Farmigo, </span>
-                    </div>
-                    <div class="col col-2 hidden-xs">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a class="privacy" href="privacy.jsp">
-                                        Privacy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="terms" href="terms.jsp">
-                                        Terms
-                                    </a>
-                                </li>
-                                <li>
+        </div>
 
-                                    <a class="help" href="mailto:help@farmigo.com">
-                                        help@farmigo.com
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col col-last hidden-xs">
-                        <a class="b-corp" href="http://www.bcorporation.net/about" title="B Corp" target="_blank"></a>
-                        <div class="hq">Farmigo is a B Corp Headquartered in Brooklyn, NY</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    </footer>     
 
 
-    </body>
+    <div id='fb-root'></div>
 
-</html>
+
+</body>
