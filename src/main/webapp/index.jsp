@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html class="farmigo-com">
 
-    <script>
-        window.functionsToRun = [];
-        window.runAfter = function (callback) {
-            if (window.requireFinished) {
-                callback();
-            } else {
-                window.functionsToRun.push(callback);
-            }
-        }
-    </script>
-
+  
 
 
     <head>
