@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="farmigo-com">
+<html>
 
   
 
 
+
     <head>
         <title>Home </title>   
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset=UTF-8">
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
         <meta name="description" content="Shop your online farmer?s market ? fresh food, direct from the source. Buy local produce, dairy, meats, and more with delivery straight to your neighborhood."/>
         <meta property="og:title" content="20% off, amazingly fresh food!"/>
