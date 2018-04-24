@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+ 
 
-  
-
-
-
-    <head lang="fr">
+    <head >
         <title>Home </title>   
         <meta charset="UTF-8">
        
@@ -25,80 +22,7 @@
         <script src="site/common/js/namespace/namespace.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfANpgkDJZ9xA6_PeUIy0PhJbC75OMruc"></script>
         <script src="site/farmigo.com/buildd3d7.js?2016-06-24-2230"></script>
-
-        <script>
-            // General values that are detected by the server and passed to JS code
-            Farmigo.common.data.isProduction = true;
-            Farmigo.common.data.isFarmigoUser = false;
-            Farmigo.common.data.isIpad = 0;
-            Farmigo.common.data.isTouch = 'ontouchstart' in document.documentElement;
-            Farmigo.common.data.isMobile = 0;
-            Farmigo.common.data.isMobileDevice = 0;
-            Farmigo.common.data.debugMode = false;
-            Farmigo.common.data.page = 'Home';
-            Farmigo.common.data.pageWidth = 993;
-            Farmigo.common.data.farmKey = null;
-            Farmigo.common.data.supportEmail = 'help@farmigo.com';
-            Farmigo.common.data.loginUrl = 'login.html';
-            Farmigo.common.useragent = {
-                ie9: false,
-                ie8: false,
-                ie7: false,
-                ie: false
-            }
-
-            // set data for identifying (kiss metrics, qualaroo)
-
-            var communities = [];
-
-            if (communities.length > 0) {
-                Farmigo.common.data.memberCommunities = communities;
-            }
-
-        </script>
-
-
-
-
-        <script>
-            (function () {
-
-                Farmigo.enums = {"EnumSigninStatus": {"Ok": "Ok", "Unauthorized": "Unauthorized", "WrongEmail": "WrongEmail", "WrongPassword": "WrongPassword", "ChangePassword": "ChangePassword", "EmailSendFailed": "EmailSendFailed", "OkExistingForFarm": "OkExistingForFarm"}, "SubscriptionStatus": {"NoSubscription": "NoSubscription", "SubscriptionExists": "SubscriptionExists", "ProcessingSubscription": "ProcessingSubscription", "HoldSubscription": "HoldSubscription", "SubscriptionCanceled": "SubscriptionCanceled", "SplitSubscriptionMember": "SplitSubscriptionMember"}, "StatusCode": {"OK": "OK", "FAILURE": "FAILURE", "TIMEOUT": "TIMEOUT", "EXHAUSTED": "EXHAUSTED"}, "EnumAction": {"ThankYou": "ThankYou", "LeadExists": "LeadExists", "StartApply": "StartApply", "OK": "OK", "Failed": "Failed"}, "EnumRegion": {"NY": "NY", "SF": "SF", "SEA": "SEA"}, "EnumSearchSource": {"Member": "Member", "Item": "Item", "StoreItem": "StoreItem", "Location": "Location", "Route": "Route", "Schedule": "Schedule", "Producer": "Producer"}};
-
-                Farmigo.enums.JsonStatus = {
-                    OK: 'OK',
-                    FAILED: 'Failed'
-                };
-
-            })();
-        </script>
  
-
-
-
-    <script>
-        if (Farmigo.common.data.isProduction)
-            mixpanel.init("1de18df0e735994ce21b919f3fa006eb");
-        else
-            mixpanel.init("e560df27bfe6f87fde28c4307b30b940");
-
-        window.runAfter(function () {
-
-            var MemberData = (((Farmigo || {}).common || {}).model || {}).MemberData;
-            if (MemberData) {
-                mixpanel.identify(MemberData.email);
-
-                if (MemberData.firstName) {
-                    mixpanel.people.set({
-                        $email: MemberData.email,
-                        $first_name: MemberData.firstName,
-                        $last_name: MemberData.lastName
-                    });
-                }
-            }
-        });
-    </script>
-    <!-- Evalute screen capture tools -->
 
  
 
@@ -236,15 +160,7 @@
         </div>
 
 
-
-
-
-
-        <script>
-            window.runAfter(function () {
-                Farmigo.com.view.HomePageView.show();
-            });
-        </script>
+ 
         <section class="content-section">
             <div class="content default-view">
                 <div class="default-content">
@@ -270,48 +186,7 @@
 
                 </div>
 
-
-                <!--        <div class="region-content">
-                            <h2 class="hero-title">Where are you located?</h2>
-                            <ul class="region-list">
-                                
-                                    <li>
-                                        <button class="button ghost" data-id="NY">New York</button>
-                                    </li>
-                                
-                                    <li>
-                                        <button class="button ghost" data-id="NJ">New Jersey</button>
-                                    </li>
-                                
-                                    <li>
-                                        <button class="button ghost" data-id="SF">Northern California</button>
-                                    </li>
-                                
-                                    <li>
-                                        <button class="button ghost" data-id="SEA">Seattle-Tacoma</button>
-                                    </li>
-                                
-                            </ul>
-                            <div class="forms transparent">
-                                <div class="forms-content">
-                                    <a class="out-of-region-link">Request Farmigo in your area &raquo;</a>
-                                    <form class="out-of-region-form" onsubmit="return false;" style="display:none;">
-                                        <div class="zip-code form-field">
-                                            <input  id="zipCode" type="text" placeholder="Zip Code" error="please enter valid value" mandatory>
-                                        </div>
-                                        <div class="email form-field">
-                                            <input id="email" type="email" form-type="email" placeholder="Email" error="Please enter a valid email" mandatory>
-                                        </div>
-                                        <button type="submit" class="button">Submit</button>
-                                    </form>
-                                    <div class="out-of-region-final-content" style="display:none;">
-                                        <i class="check-mark"></i>
-                                        <h3>Thanks!</h3>
-                                        <p>We'll let you know when we're in your neighborhood!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
+ 
             </div>
             <button class="how-it-works semi-ghost">How it works</button>
         </section>
